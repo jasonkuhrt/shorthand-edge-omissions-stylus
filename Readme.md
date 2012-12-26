@@ -1,4 +1,10 @@
 # Better clockhand
+Omitted values syntax added to CSS clockhand syntax.
+
+  .  
+  .  
+  .  
+  
 
 ### Examples (stylus code followed by css output)
 
