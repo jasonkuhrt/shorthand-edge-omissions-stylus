@@ -2,7 +2,10 @@
   "name": "better-clockhand-stylus",
   "version": "0.0.0",
   "description": "Improved clockhand shorthand css syntax to allow for side (i.e. left) omissions.",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonkuhrt/better-clockhand-stylus"
+  },
   "main": "index.js",
   "keywords": [
     "Stylus",
