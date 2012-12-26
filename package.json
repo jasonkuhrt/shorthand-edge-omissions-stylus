@@ -1,7 +1,7 @@
 {
   "name": "better-clockhand-stylus",
   "version": "0.0.0",
-  "description": "Improved clockhand shorthand css syntax to allow for side (i.e. left) omissions.",
+  "description": "Omitted values syntax added to CSS clockhand syntax.",
   "repository": "",
   "main": "index.js",
   "keywords": [
