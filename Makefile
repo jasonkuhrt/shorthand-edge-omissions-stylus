@@ -1,9 +1,11 @@
 
-tests:
+
+
+test:
 	@./node_modules/.bin/mocha \
 		--require should \
 		--ignore-leaks \
 		test-runner.js
 
 
-.PHONY: tests
+.PHONY: test

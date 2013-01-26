@@ -11,7 +11,7 @@ var stylus = require('stylus')
 
 // test cases
 
-var cases = fs.readdirSync('tests').filter(function(file){
+var cases = fs.readdirSync('test').filter(function(file){
   return ~file.indexOf('.styl');
 }).map(function(file){
   return file.replace('.styl', '');
@@ -21,9 +21,9 @@ describe('integration', function(){
   cases.forEach(function(test){
     var name = test.replace(/[-.]/g, ' ');
     it(name, function(){
-      var path = 'tests/' + test + '.styl';
+      var path = 'test/' + test + '.styl';
       var styl = fs.readFileSync(path, 'utf8').replace(/\r/g, '');
-      var css = fs.readFileSync('tests/' + test + '.css', 'utf8').replace(/\r/g, '').trim();
+      var css = fs.readFileSync('test/' + test + '.css', 'utf8').replace(/\r/g, '').trim();
       var style = stylus(styl).use(a).set('compress', true);
 
       style.render(function(err, actual){
