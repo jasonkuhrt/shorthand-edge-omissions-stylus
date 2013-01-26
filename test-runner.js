@@ -30,7 +30,7 @@ describe('integration', function(){
     var testName     = test.replace(/[-.]/g, ' ')
     var testFilePath = testDirPath + '/' + test + '.styl'
     var stylusSource = fs.readFileSync(testFilePath, 'utf8').replace(/\r/g, '')
-    var styl         = stylus(stylusSource).use(shorthandOmissions).set('compress', true)
+    var styl         = stylus(stylusSource).use(shorthandOmissions).import('better-clockhand').set('compress', true)
 
     it(testName, function(){
       styl.render(function(err, actual){
