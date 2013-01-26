@@ -1,35 +1,45 @@
 
-/**
- * Module dependencies.
- */
 
-var stylus = require('stylus')
-  , a   = require('./index')
-  , fs = require('fs')
-  , cleanCSS = require('clean-css');
 
+//  Shorthand Omissions Test Runner
+//  -------------------------------
+
+
+
+var fs                 = require('fs')
+var cleanCSS           = require('clean-css')
+var stylus             = require('stylus')
+var shorthandOmissions = require('./index')
+
+// Constants
+
+var testDirPath = 'test'
 
 // test cases
 
-var cases = fs.readdirSync('test').filter(function(file){
+var cases = fs.readdirSync(testDirPath).filter(function(file){
   return ~file.indexOf('.styl');
 }).map(function(file){
   return file.replace('.styl', '');
-});
+})
+
+
 
 describe('integration', function(){
   cases.forEach(function(test){
-    var name = test.replace(/[-.]/g, ' ');
-    it(name, function(){
-      var path = 'test/' + test + '.styl';
-      var styl = fs.readFileSync(path, 'utf8').replace(/\r/g, '');
-      var css = fs.readFileSync('test/' + test + '.css', 'utf8').replace(/\r/g, '').trim();
-      var style = stylus(styl).use(a).set('compress', true);
+    var testName     = test.replace(/[-.]/g, ' ')
+    var testFilePath = testDirPath + '/' + test + '.styl'
+    var stylusSource = fs.readFileSync(testFilePath, 'utf8').replace(/\r/g, '')
+    var styl         = stylus(stylusSource).use(shorthandOmissions).set('compress', true)
 
-      style.render(function(err, actual){
-        if (err) throw err;
-        cleanCSS.process(actual).should.equal(cleanCSS.process(css));
+    it(testName, function(){
+      styl.render(function(err, actual){
+        if (err) throw err
+        actual       = cleanCSS.process(actual)
+        var expected = cleanCSS.process(fs.readFileSync(testDirPath + '/' + test + '.css', 'utf8').replace(/\r/g, '').trim())
+        actual.should.equal(expected);
       });
     })
+
   });
 })
