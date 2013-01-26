@@ -25,7 +25,7 @@ var cases = fs.readdirSync(testDirPath).filter(function(file){
 
 
 
-describe('integration', function(){
+describe('Shorthand Omissions', function(){
   cases.forEach(function(test){
     var testName     = test.replace(/[-.]/g, ' ')
     var testFilePath = testDirPath + '/' + test + '.styl'
