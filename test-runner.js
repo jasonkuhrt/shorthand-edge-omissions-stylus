@@ -34,7 +34,7 @@ var suites = testFiles.map(getTestsFromFile)
 describe('Shorthand Omissions', function(){
   suites.forEach(function(tests){
     tests.forEach(function(test){
-      var styl = stylus(test.stylus).use(shorthandOmissions).import('better-clockhand').set('compress', true)
+      var styl = stylus(test.stylus).use(shorthandOmissions).import('shorthand-omissions').set('compress', true)
       it(test.description, function(){
         styl.render(function(err, actual){
           if (err) throw err
