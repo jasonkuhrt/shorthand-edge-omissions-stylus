@@ -1,0 +1,46 @@
+
+
+
+//  @it should not unnecessarially break property into separate property-side properties
+
+//  Shows how if no _ is present then
+//  padding is used as-is, namely that
+//  padding:0; etc wouldn't render as
+//  4 padding-side properties
+
+#test
+  padding 0
+  padding 0 0
+  padding 0 0 0
+  padding 0 0 0 0
+
+//  @expect  -------------------------------
+
+#test {
+  padding: 0;
+  padding: 0 0;
+  padding: 0 0 0;
+  padding: 0 0 0 0;
+}
+
+
+
+
+
+
+//  @it should not unnecessarially break property into separate property-side properties (with !important)
+
+#test
+  padding 0 !important
+  padding 0 0 !important
+  padding 0 0 0 !important
+  padding 0 0 0 0 !important
+
+//  @expect  -------------------------------
+
+#test {
+  padding: 0 !important;
+  padding: 0 0 !important;
+  padding: 0 0 0 !important;
+  padding: 0 0 0 0 !important;
+}

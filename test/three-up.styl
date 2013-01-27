@@ -1,0 +1,31 @@
+
+
+
+//  @it should support 3up
+
+#test { padding: 0 _ _ }
+#test { padding: _ 0 _ }
+#test { padding: _ _ 0 }
+
+//  @expect  -------------------------------
+
+#test { padding-top:0; }
+#test { padding-left:0; padding-right:0; }
+#test { padding-bottom:0; }
+
+
+
+
+
+
+//  @it should support 3up !important
+
+#test { padding: 0 _ _ !important }
+#test { padding: _ 0 _ !important }
+#test { padding: _ _ 0 !important }
+
+//  @expect  -------------------------------
+
+#test { padding-top: 0 !important; }
+#test { padding-left: 0 !important; padding-right: 0 !important; }
+#test { padding-bottom: 0 !important; }

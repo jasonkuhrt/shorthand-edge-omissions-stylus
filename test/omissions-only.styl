@@ -1,0 +1,30 @@
+
+
+
+//  @it should not unnecessarially render
+
+//  This test shouldn't render anything
+//  in the CSS
+
+#test
+  padding _
+  padding _ _
+  padding _ _ _
+  padding _ _ _ _
+
+//  @expect  -------------------------------
+
+
+
+
+
+
+//  @it should not unnecessarially render (with !important)
+
+#test
+  padding _ !important
+  padding _ _ !important
+  padding _ _ _ !important
+  padding _ _ _ _ !important
+
+//  @expect  -------------------------------

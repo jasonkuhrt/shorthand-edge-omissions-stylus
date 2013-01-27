@@ -1,0 +1,38 @@
+
+
+
+//  @it should support 4up
+
+#test
+  padding 0 _ _ _
+  padding _ 0 _ _
+  padding _ _ 0 _
+  padding _ _ _ 0
+
+//  @expect  -------------------------------
+
+#test {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+
+
+
+
+
+//  @it should support 4up with !important
+
+#test { padding: 0 _ _ _ !important }
+#test { padding: _ 0 _ _ !important }
+#test { padding: _ _ 0 _ !important }
+#test { padding: _ _ _ 0 !important }
+
+//  @expect  -------------------------------
+
+#test { padding-top: 0 !important; }
+#test { padding-right: 0 !important; }
+#test { padding-bottom: 0 !important; }
+#test { padding-left: 0 !important; }
