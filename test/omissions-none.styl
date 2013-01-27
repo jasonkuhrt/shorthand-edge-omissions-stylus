@@ -8,7 +8,7 @@
 //  padding:0; etc wouldn't render as
 //  4 padding-side properties
 
-#test
+#assert
   padding 0
   padding 0 0
   padding 0 0 0
@@ -16,7 +16,7 @@
 
 //  @expect  -------------------------------
 
-#test {
+#assert {
   padding: 0;
   padding: 0 0;
   padding: 0 0 0;
@@ -30,7 +30,7 @@
 
 //  @it should not unnecessarially break property into separate property-side properties (with !important)
 
-#test
+#assert
   padding 0 !important
   padding 0 0 !important
   padding 0 0 0 !important
@@ -38,7 +38,7 @@
 
 //  @expect  -------------------------------
 
-#test {
+#assert {
   padding: 0 !important;
   padding: 0 0 !important;
   padding: 0 0 0 !important;

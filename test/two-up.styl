@@ -3,20 +3,20 @@
 
 //  @it should support 2up
 
-#test
+#assert
   padding _ 0
 
-#test
+#assert
   padding 0 _
 
 //  @expect  -------------------------------
 
-#test {
+#assert {
   padding-left: 0;
   padding-right: 0;
 }
 
-#test {
+#assert {
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -27,20 +27,20 @@
 
 //  @it should support 2up with !important
 
-#test
+#assert
   padding _ 0 !important
 
-#test
+#assert
   padding 0 _ !important
 
 //  @expect  -------------------------------
 
-#test {
+#assert {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-#test {
+#assert {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
