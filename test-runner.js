@@ -1,6 +1,7 @@
 
 
 
+
 //  Shorthand Omissions Test Runner
 //  -------------------------------
 
@@ -16,7 +17,6 @@ var glob               = require('glob')
 
 var testDirPath = 'test'
 
-//var testFiles = fs.readdirSync(testDirPath)
 
 
 
@@ -69,3 +69,4 @@ function extractTestParts(testRaw) {
 function removeComments(string){ return string.replace(/\/\/.*\n?/g,'') }
 function trim(string)     { return string.trim() }
 function isntEmpty(string){ return string.length }
+
