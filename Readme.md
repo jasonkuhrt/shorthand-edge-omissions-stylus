@@ -1,11 +1,14 @@
-# CSS Shorthand Omissions
-"Omitted values" in CSS `padding`/`margin` [shorthand syntax](https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties), for [Stylus](http://learnboost.github.com/stylus/).
+# Shorthand Omissions for [Stylus](http://learnboost.github.com/stylus/)
+[![Build Status](https://travis-ci.org/jasonkuhrt/better-clockhand-stylus.png)](https://travis-ci.org/jasonkuhrt/better-clockhand-stylus)
+
+Allow omitted values in shorthand 1-value, 2-value, 3-value, 4-value `padding` and `margin`.
 
 .  
 .  
 .  
 
 ### Examples
+2-value
 ```
 .foo-selector
   padding 4rem _
@@ -17,7 +20,8 @@
 }
 ```
 
-.  
+.  
+3-value
 
 ```
 .foo-selector
@@ -37,7 +41,7 @@
 
 ### What
 
-Native CSS `padding`/`margin` shorthand syntax vs omissions:
+Native CSS `padding`/`margin` [shorthand syntax](https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties) vs omissions:
 ```
 .foo { margin : 4px 0; }    .foo { padding: 0 25px 46px; }    .foo { padding: 4px 0 0 17px; }
 ```
