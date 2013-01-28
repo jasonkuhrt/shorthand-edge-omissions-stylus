@@ -3,7 +3,7 @@
 
 Allow omitted values in shorthand 1-value, 2-value, 3-value, 4-value `padding` and `margin`.
 
-### Install
+### Use
 ```
   npm install git://github.com/jasonkuhrt/better-clockhand-stylus.git --save
 ```
@@ -13,33 +13,13 @@ Then in your stylus compile function
 ```
 ...
 stylus.use(require('better-clockhand-stylus')())
+stylus.import('shorthand-edge-omissions')
 ...
 ```
 
 Or in your stylus CLI command
 ```
-stylus ... --use ./node_modules/better-clockhand-stylus
-```
-
-
-
-### Use
-In your `.styl` file:
-```
-@import 'better-clockhand-stylus'
-
-...
-```
-Or in the stylus compile
-```
-stylus ... --use ./node_modules/better-clockhand-stylus --import better-clockhand-stylus
-
---or--
-
-...
-stylus.use(require('better-clockhand-stylus')())
-stylus.import('better-clockhand-stylus')
-...
+stylus ... --import ./node_modules/better-clockhand-stylus
 ```
 
 .  
