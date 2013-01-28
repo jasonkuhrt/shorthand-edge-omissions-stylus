@@ -7,15 +7,16 @@
 
 
 
-var fs                 = require('fs')
-var cleanCSS           = require('clean-css')
-var stylus             = require('stylus')
-var shorthandOmissions = require('./index')
-var glob               = require('glob')
+var fs                     = require('fs')
+var cleanCSS               = require('clean-css')
+var stylus                 = require('stylus')
+var shorthandEdgeOmissions = require('./index')
+var glob                   = require('glob')
 
 // Constants
 
-var testDirPath = 'test'
+var testDirPath       = 'test'
+var stylusPackageName = 'shorthand-edge-omissions'
 
 
 
@@ -31,10 +32,10 @@ var suites = testFiles.map(getTestsFromFile)
 
 
 
-describe('Shorthand Omissions', function(){
+describe('Shorthand Edge Omissions', function(){
   suites.forEach(function(tests){
     tests.forEach(function(test){
-      var styl = stylus(test.stylus).use(shorthandOmissions).import('shorthand-omissions').set('compress', true)
+      var styl = stylus(test.stylus).use(shorthandEdgeOmissions).import(stylusPackageName).set('compress', true)
       it(test.description, function(){
         styl.render(function(err, actual){
           if (err) throw err
