@@ -9,7 +9,7 @@ Allow omitted values in shorthand 1-value, 2-value, 3-value, 4-value `padding` a
 
 ### Install
 ```
-  npm install git://github.com/jasonkuhrt/better-clockhand-stylus.git --save
+npm install git://github.com/jasonkuhrt/better-clockhand-stylus.git --save
 ```
 
 Then in your stylus compile function
