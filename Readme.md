@@ -3,6 +3,10 @@
 
 Allow omitted values in shorthand 1-value, 2-value, 3-value, 4-value `padding` and `margin`.
 
+.  
+.  
+.  
+
 ### Use
 ```
   npm install git://github.com/jasonkuhrt/better-clockhand-stylus.git --save
@@ -60,6 +64,8 @@ stylus ... --import ./node_modules/better-clockhand-stylus
 
 ### What
 
+With omissions you never *have* to leave shorthand `margin`/`padding` syntax. CSS often forces you to leave shorthand even if you'd prefer not to. For instance you cannot specify just `margin-top`/`margin-bottom`.
+
 Native CSS `padding`/`margin` [shorthand syntax](https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties) vs omissions:
 ```
 .foo { margin : 4px 0; }    .foo { padding: 0 25px 46px; }    .foo { padding: 4px 0 0 17px; }
@@ -67,8 +73,6 @@ Native CSS `padding`/`margin` [shorthand syntax](https://developer.mozilla.org/e
 ```
 .foo { margin : 4px _; }    .foo { padding: _ 25px 46px; }    .foo { padding: 4px _ _ 17px; }
 ```
-
-With omissions you never *have* to leave shorthand `margin`/`padding` syntax. CSS often forces you to leave shorthand even if you'd prefer not to. For instance you cannot specify just `margin-top`/`margin-bottom`.
 
 .  
 .  
