@@ -7,7 +7,7 @@ Allow omitted values in shorthand 1-value, 2-value, 3-value, 4-value `padding` a
 .  
 .  
 
-### Use
+### Install
 ```
   npm install git://github.com/jasonkuhrt/better-clockhand-stylus.git --save
 ```
