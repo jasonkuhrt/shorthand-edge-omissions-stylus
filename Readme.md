@@ -37,9 +37,9 @@ stylus ... --use ./node_modules/better-clockhand-stylus --import better-clockhan
 --or--
 
 ...
+stylus.use(require('better-clockhand-stylus')())
 stylus.import('better-clockhand-stylus')
 ...
-
 ```
 
 .  
