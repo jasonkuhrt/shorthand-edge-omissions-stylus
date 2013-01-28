@@ -44,7 +44,7 @@ stylus ... --import ./node_modules/better-clockhand-stylus
 ```
 
 .  
-3-value
+4-value
 
 ```
 .foo-selector
