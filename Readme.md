@@ -74,6 +74,8 @@ Native CSS `padding`/`margin` [shorthand syntax](https://developer.mozilla.org/e
 .foo { margin : 4px _; }    .foo { padding: _ 25px 46px; }    .foo { padding: 4px _ _ 17px; }
 ```
 
+Omissions allow you to skip values, whereas CSS forces you to assign something.
+
 .  
 .  
 .  
