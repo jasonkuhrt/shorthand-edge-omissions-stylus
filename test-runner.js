@@ -12,62 +12,86 @@ var cleanCSS               = require('clean-css')
 var stylus                 = require('stylus')
 var shorthandEdgeOmissions = require('./index')
 var glob                   = require('glob')
-
-// Constants
-
-var testDirPath       = 'test'
-var stylusPackageName = 'shorthand-edge-omissions'
+var _ = require('lodash')
 
 
 
+var config = {
+  testDirPath       : './test',
+  stylusPackageName : 'shorthand-edge-omissions'
+}
 
-// test cases
-
-var testFiles = glob.sync(testDirPath + '/**/*.styl')
-
-var suites = testFiles.map(getTestsFromFile)
-// empty files reutnr false, prune any such returned vals now
-.filter(function(val){ return val })
 
 
 
 
 describe('Shorthand Edge Omissions', function(){
-  suites.forEach(function(tests){
-    tests.forEach(function(test){
-      var styl = stylus(test.stylus).use(shorthandEdgeOmissions).import(stylusPackageName).set('compress', true)
+  forEachTest(function(test){
+
+    stylus(test.styl, {compress: true})
+    .use(shorthandEdgeOmissions)
+    .import(config.stylusPackageName)
+    .render(function(err, cssFromStylus){
+      if (err) throw err
+
       it(test.description, function(){
-        styl.render(function(err, actual){
-          if (err) throw err
-          actual       = cleanCSS.process(actual)
-          var expected = cleanCSS.process(test.css)
-          actual.should.equal(expected);
-        })
+        cleanCSS.process(cssFromStylus)
+        .should.equal(test.css);
       })
+
     })
+
   })
 })
 
 
 
-
-function getTestsFromFile(filePath){
-  var fileContents = fs.readFileSync(filePath, 'utf8')
-  if (fileContents === "") return false;
-  var testsRaw     = fileContents.split(/.*@it.*\n/).map(trim).filter(isntEmpty)
-  var descriptions = fileContents.match(/@it.*\n/g)
-  var tests        = testsRaw.map(extractTestParts)
-  descriptions.forEach(function(desc, i){
-    tests[i].description = desc.replace('@it','').trim()
-    })
-  return tests
+function forEachTest(callback) {
+  var testFiles = _.reject(glob.sync(config.testDirPath + '/**/*.styl'), isEmptyFile)
+  _.each(_.flatten(_.map(testFiles, getTestsFromFile)), callback)
 }
 
-function extractTestParts(testRaw) {
-  var test = testRaw.split(/.*@expect.*\n?/).map(removeComments).map(trim);
-  return { stylus: test[0], css: test[1] }
-}
-function removeComments(string){ return string.replace(/\/\/.*\n?/g,'') }
-function trim(string)     { return string.trim() }
-function isntEmpty(string){ return string.length }
 
+function getTestsFromFile(filePath) {
+  var fileContents = trimNewlines(fs.readFileSync(filePath, 'utf8'))
+  return extractTestsFromString(fileContents)
+}
+
+
+
+function extractTestsFromString(string) {
+  //  Filter empty strings out, it seems that the
+  //  @it line leaves an empty string entry behind in the array
+  return _.map(_.reject(string.split(/.*@it\s?/), isEmpty), extractTestFromString)
+}
+
+
+
+function extractTestFromString(test) {
+  var description = test.match(/.*/)[0]
+  test = test.replace(/.*/,'')
+  stylusAndCss = test.split(/.*@expect.*/).map(trimNewlines)
+
+  return {
+    description : description,
+    styl        : stylusAndCss[0],
+    css         : cleanCSS.process(stylusAndCss[1])
+  }
+}
+
+
+
+//  string utils
+
+function isEmpty(string) {
+  return !string.length
+}
+
+function isEmptyFile(filePath) {
+  return isEmpty(trimNewlines(fs.readFileSync(filePath, 'utf8')))
+}
+
+//  whitespace mutation utils
+
+function trim(string)         { return string.trim() }
+function trimNewlines(string) { return string.replace(/^(\s*|\n*)|(\s*|\n*)$/g,'') }
