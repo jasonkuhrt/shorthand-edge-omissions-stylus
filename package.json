@@ -1,10 +1,10 @@
 {
-  "name": "shorthand-omissions-stylus",
+  "name": "shorthand-edge-omissions-stylus",
   "version": "0.1.0",
-  "description": "git@github.com:jasonkuhrt/better-clockhand-stylus.git",
+  "description": "Allow omitted values in shorthand 1-value, 2-value, 3-value, 4-value padding and margin.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jasonkuhrt/better-clockhand-stylus"
+    "url": "https://github.com/jasonkuhrt/shorthand-edge-omissions-stylus"
   },
   "main": "index.js",
   "scripts": {

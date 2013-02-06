@@ -7,9 +7,9 @@ Allow omitted values in shorthand 1-value, 2-value, 3-value, 4-value `padding` a
 .  
 .  
 
-### Use
+### Install
 ```
-  npm install git://github.com/jasonkuhrt/better-clockhand-stylus.git --save
+npm install git://github.com/jasonkuhrt/better-clockhand-stylus.git --save
 ```
 
 Then in your stylus compile function
@@ -73,6 +73,8 @@ Native CSS `padding`/`margin` [shorthand syntax](https://developer.mozilla.org/e
 ```
 .foo { margin : 4px _; }    .foo { padding: _ 25px 46px; }    .foo { padding: 4px _ _ 17px; }
 ```
+
+Omissions allow you to skip values, whereas CSS forces you to assign something.
 
 .  
 .  
