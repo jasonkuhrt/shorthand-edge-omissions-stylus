@@ -12,7 +12,7 @@ var cleanCSS               = require('clean-css')
 var stylus                 = require('stylus')
 var shorthandEdgeOmissions = require('./index')
 var glob                   = require('glob')
-var _ = require('lodash')
+var _                      = require('lodash')
 
 
 
