@@ -2,6 +2,11 @@
   "name": "shorthand-edge-omissions-stylus",
   "version": "0.1.0",
   "description": "Allow omitted values in shorthand 1-value, 2-value, 3-value, 4-value padding and margin.",
+  "keywords": [
+    "Stylus",
+    "CSS",
+    "utility"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/jasonkuhrt/shorthand-edge-omissions-stylus"
@@ -10,19 +15,14 @@
   "scripts": {
     "test": "make test"
   },
-  "keywords": [
-    "Stylus",
-    "CSS",
-    "utility"
-  ],
-  "author": "Jason Kuhrt",
-  "license": "MIT",
   "devDependencies": {
-    "mocha": "~1.8.1",
-    "stylus": "~0.32.0",
-    "should": "~1.2.1",
-    "clean-css": "~0.9.1",
-    "glob": "~3.1.17",
-    "lodash": "~1.0.0-rc.3"
-  }
+    "mocha"     : "~1.8.1",
+    "stylus"    : "~0.32.0",
+    "should"    : "~1.2.1",
+    "clean-css" : "~0.9.1",
+    "glob"      : "~3.1.17",
+    "lodash"    : "~1.0.0-rc.3"
+  },
+  "author": "Jason Kuhrt <jasonkuhrt@me.com> (http://jasonkuhrt.com)",
+  "license": "MIT"
 }
