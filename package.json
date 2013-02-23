@@ -16,12 +16,6 @@
     "test": "make test"
   },
   "devDependencies": {
-    "mocha"     : "~1.8.1",
-    "stylus"    : "~0.32.0",
-    "should"    : "~1.2.1",
-    "clean-css" : "~0.9.1",
-    "glob"      : "~3.1.17",
-    "lodash"    : "~1.0.0-rc.3"
   },
   "author": "Jason Kuhrt <jasonkuhrt@me.com> (http://jasonkuhrt.com)",
   "license": "MIT"

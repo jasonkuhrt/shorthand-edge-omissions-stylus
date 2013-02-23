@@ -7,11 +7,11 @@
 
 
 var testRunnerConfig = {
-  testDirPath : './test',
-  describe    : 'Shorthand Edge Omissions',
-  use         : require('./index'),
-  import      : 'shorthand-edge-omissions'
+  describe: 'Shorthand Edge Omissions',
+  stylus: {
+    use: require('./index'),
+    import: 'shorthand-edge-omissions'
+  }
 }
 
-
-require('./stylus-test-runner')(testRunnerConfig)
+require('stylus-test-runner')(testRunnerConfig)
