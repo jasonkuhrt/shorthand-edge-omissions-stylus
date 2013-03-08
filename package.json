@@ -15,7 +15,11 @@
   "scripts": {
     "test": "make test"
   },
+  "dependencies": {
+    "clockhand-stylus": "~0.1.0"
+  },
   "devDependencies": {
+    "stylus-test-runner": "git://github.com/jasonkuhrt/stylus-test-runner.git"
   },
   "author": "Jason Kuhrt <jasonkuhrt@me.com> (http://jasonkuhrt.com)",
   "license": "MIT"

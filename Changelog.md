@@ -1,3 +1,6 @@
+v0.1.2 ---- 7 Mar 2013 --------------------------------
+
+_  Offload work to `clockhand` stylus mixin via the new `clockhand-stylus` npm package
 
 
 

@@ -9,7 +9,7 @@
 var testRunnerConfig = {
   describe: 'Shorthand Edge Omissions',
   stylus: {
-    use: require('./index'),
+    use: require('./index')(),
     import: 'shorthand-edge-omissions'
   }
 }
