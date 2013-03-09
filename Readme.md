@@ -1,62 +1,32 @@
-# Shorthand Omissions for [Stylus](http://learnboost.github.com/stylus/)
-[![Build Status](https://travis-ci.org/jasonkuhrt/better-clockhand-stylus.png)](https://travis-ci.org/jasonkuhrt/better-clockhand-stylus)
+# shorthand-edge-omissions-stylus [![Build Status](https://travis-ci.org/jasonkuhrt/better-clockhand-stylus.png)](https://travis-ci.org/jasonkuhrt/better-clockhand-stylus)
 
-Allow omitted values in shorthand 1-value, 2-value, 3-value, 4-value `padding` and `margin`.
+Permit [clockhand-stylus](https://github.com/jasonkuhrt/clockhand-stylus/blob/master/README.md#stylus-clockhand-shorthand) in `padding`/`margin`.
+```
+.foo
+  padding 1 _
+  margin  _ 1 2 _
 
-.  
-.  
-.  
+.foo {
+  padding-top:1; padding-bottom:1;
+  margin-right:1; margin-bottom:1;
+}
+```
 
 ### Install
 ```
 npm install shorthand-edge-omissions-stylus --save
-```
 
-Then in your stylus compile function
+stylus.use(require('shorthand-edge-omissions-stylus')())
 
-```
-...
-stylus.use(require('better-clockhand-stylus')())
+// global import, optional
+
 stylus.import('shorthand-edge-omissions')
-...
-```
-
-Or in your stylus CLI command
-```
+// or
 stylus ... --import ./node_modules/better-clockhand-stylus
 ```
 
-.  
-.  
-.  
-
-### Examples
-2-value
-```
-.foo-selector
-  padding 4rem _
-```
-```  
-.foot-selector {
-  padding-top   : 4rem;
-  padding-bottom: 4rem;
-}
-```
-
-.  
-4-value
-
-```
-.foo-selector
-  padding 4rem 4rem _ 4rem
-```
-```
-.foot-selector {
-  padding-top  : 4rem;
-  padding-right: 4rem;
-  padding-left : 4rem;
-}
-```
+### Documentation
+See [clockhand-stylus syntax](https://github.com/jasonkuhrt/clockhand-stylus/blob/master/README.md#stylus-clockhand-shorthand)
 
 .  
 .  
@@ -89,10 +59,6 @@ Omissions allow you to skip values, whereas CSS forces you to assign something.
 .  
 .  
 .  
-
-### License
-
-MIT
 
 ### Further Reading
 
