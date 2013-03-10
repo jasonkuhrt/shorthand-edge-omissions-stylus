@@ -16,12 +16,14 @@ Permit [clockhand-stylus](https://github.com/jasonkuhrt/clockhand-stylus/blob/ma
   margin-bottom : 1 !important;
 }
 ```
-### Highlights
+### Summary
+- [Stylus](https://github.com/learnboost/stylus) [mixin](https://github.com/LearnBoost/stylus/blob/master/docs/mixins.md) (not [function](https://github.com/LearnBoost/stylus/blob/master/docs/functions.md))
 - `_` in `padding`/`margin` shorthand
-- Writing `margin`/`padding` assignment becomes brisker since you can use shorthand 100% of the time
-- Edges are represented with "graphics" not words: `margin: 4 3 _ _;   vs   margin-top:3; margin-right:3;`
-- Collecting all `padding` or `margin` edges on one line eases maintainence and visual scanning
-- At scale, writing `margin: 4px 0 0 17px;` when you don't actually want zeros destablizes your css codebase with rule overriding possibilities
+- Opinion:
+  - Writing `margin`/`padding` assignment becomes brisker since you can use shorthand 100% of the time
+  - Edges are represented with "graphics" not words: `margin: 4 3 _ _;   vs   margin-top:3; margin-right:3;`
+  - Collecting all `padding` or `margin` edges on one line eases maintainence and visual scanning
+  - At scale, writing `margin: 4px 0 0 17px;` when you don't actually want zeros destablizes your css codebase with rule overriding possibilities
 
 .  
 .  
