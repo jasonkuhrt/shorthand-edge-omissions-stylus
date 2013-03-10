@@ -10,7 +10,7 @@ Permit [clockhand-stylus](https://github.com/jasonkuhrt/clockhand-stylus/blob/ma
 
 .foo {
   padding-top   : 1;
-  padding-bottom: 1;
+  padding-bottom: 2;
   
   margin-right  : 1 !important;
   margin-bottom : 1 !important;
@@ -18,7 +18,7 @@ Permit [clockhand-stylus](https://github.com/jasonkuhrt/clockhand-stylus/blob/ma
 ```
 ### Summary
 - [Stylus](https://github.com/learnboost/stylus) [mixin](https://github.com/LearnBoost/stylus/blob/master/docs/mixins.md) (not [function](https://github.com/LearnBoost/stylus/blob/master/docs/functions.md))
-- `_` in `padding`/`margin` shorthand
+- `_` in `padding`/`margin` shorthand ([clockhand-stylus syntax](https://github.com/jasonkuhrt/clockhand-stylus/blob/master/README.md#stylus-clockhand-shorthand))
 - Opinion:
   - Writing `margin`/`padding` assignment becomes brisker since you can use shorthand 100% of the time
   - Edges are represented with "graphics" not words: `margin: 4 3 _ _;   vs   margin-top:3; margin-right:3;`
