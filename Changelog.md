@@ -1,3 +1,7 @@
+v0.1.3 ---- 7 Mar 2013 --------------------------------
+
+!  Bug fix for `margin` mixin, was using `padding` property
+
 v0.1.2 ---- 7 Mar 2013 --------------------------------
 
 _  Offload work to `clockhand` stylus mixin via the new `clockhand-stylus` npm package
