@@ -1,6 +1,6 @@
 {
   "name": "shorthand-edge-omissions-stylus",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Allow omitted values in shorthand 1-value, 2-value, 3-value, 4-value padding and margin.",
   "keywords": [
     "Stylus",
